@@ -1,0 +1,39 @@
+body{
+    margin: 0;
+}
+
+.pais, .provincia, .municipio, .barrio{
+    --color-borde: black;
+    border: 1px solid var(--color-borde);
+    display: flex;
+    flex-direction: column;
+    margin: 1em;
+    text-align: center;
+    color: var(--color-borde);
+    border-radius: 20px;
+}
+
+h2{
+    text-decoration: underline;
+}
+.provincia{
+    --color-borde: green;
+}
+.municipio{
+    --color-borde: rgb(71, 56, 239);
+}
+.barrio{
+    --color-borde: rgb(3, 114, 118);
+}
+.casas{
+    display: flex;
+    flex-direction: row;
+    height: 2em;
+}
+
+.casa{
+    width: 5px;
+    height: 5px;
+    background-color: rgb(0, 0, 0);
+    margin: 2px;
+}
