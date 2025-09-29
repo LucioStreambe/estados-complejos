@@ -1,27 +1,17 @@
-export default function Barrio({ nombre, casas, setter, paises }) {
+import { useDispatch } from "react-redux"
+
+export default function Barrio({ nombre, casas }) {
+    const dispatch = useDispatch()
+
+
     const casa_handler = (incremento) => {
-        const nuevosPaises = paises.map(pais => {
-            return {
-                ...pais,
-                provincias: pais.provincias.map(provincia => {
-                    return {
-                        ...provincia,
-                        municipios: provincia.municipios.map(municipio => {
-                            return {
-                                ...municipio,
-                                barrios: municipio.barrios.map(barrio => {
-                                    if (barrio.nombre === nombre) {
-                                        return { ...barrio, casas: barrio.casas + incremento }
-                                    }
-                                    return barrio
-                                })
-                            }
-                        })
-                    }
-                })
+        dispatch({
+            type: "paises/agregarCasa",
+            payload: {
+                barrioNombre: nombre,
+                cantidad: incremento
             }
         })
-        setter(nuevosPaises)
     }
 
 
